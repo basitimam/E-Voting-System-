@@ -1,0 +1,100 @@
+﻿@using K180274_Q4.Models
+@model Dictionary<string, K180274_Q4.Models.PostElectionInfo>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="Heading">
+    <h1 style="color: #228b22;  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18; color: #228b22; background: #FFFFFF; ">FAST NUCES E-Voting System</h1>
+</div>
+<div class="jumbotron">
+    <h3 style="text-align: center; color: #228b22;text-shadow: #474747 2px 1px 2px; ">President</h3>
+    <table class="table1">
+
+        <tr class="rows">
+            <th class="coloumns">Candidate Name</th>
+
+            <th class="coloumns2">Votes</th>
+        </tr>
+
+        @foreach (KeyValuePair<string, K180274_Q4.Models.PostElectionInfo> obj in ViewBag.President)
+        {
+            <tr class="rows1">
+                <td class="coloumns">@obj.Value.CandidateName</td>
+                <td class="coloumns2">@obj.Value.VoteCounts</td>
+            </tr>
+        }
+
+
+    </table>
+
+    <h3 style="text-align: center; color: #228b22; text-shadow: #474747 2px 1px 2px; ">Vice President</h3>
+    <table class="table1">
+
+        <tr class="rows">
+            <th class="coloumns">Candidate Name</th>
+
+            <th class="coloumns2">Votes</th>
+        </tr>
+
+        @foreach (KeyValuePair<string, K180274_Q4.Models.PostElectionInfo> obj in ViewBag.VPresident)
+        {
+            <tr class="rows1">
+                <td class="coloumns">@obj.Value.CandidateName</td>
+                <td class="coloumns2">@obj.Value.VoteCounts</td>
+            </tr>
+        }
+
+
+    </table>
+    <h3 style="text-align: center; color: #228b22; text-shadow: #474747 2px 1px 2px; ">General Secretary</h3>
+    <table class="table1">
+        <tr class="rows">
+            <th class="coloumns">Candidate Name</th>
+
+            <th class="coloumns2">Votes</th>
+        </tr>
+
+        @foreach (KeyValuePair<string, K180274_Q4.Models.PostElectionInfo> obj in ViewBag.GSecretary)
+        {
+            <tr class="rows1">
+                <td class="coloumns">@obj.Value.CandidateName</td>
+                <td class="coloumns2">@obj.Value.VoteCounts</td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+
+<style>
+    .table1 {
+        text-align: center;
+    }
+   
+    .coloumns {
+        margin: 10px;
+        text-align: left;
+        padding: 10px;
+    }
+    th {
+        border: 3px solid royalblue;
+        background-color: #f0f8ff;
+    }
+    .coloumns2 {
+        margin: 10px;
+        text-align: left;
+        padding: 10px;
+        padding-left:720px;
+    }
+    .Heading{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    .rows1 {
+        background-color: #add8e6;
+    }
+
+ 
+</style>
